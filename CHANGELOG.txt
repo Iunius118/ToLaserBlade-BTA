@@ -1,0 +1,7 @@
+# Change Log
+[ToLaserBlade (Better than Adventure)](https://github.com/Iunius118/ToLaserBlade).
+[Source](https://github.com/Iunius118/ToLaserBlade).
+
+## [Unreleased]
+
+## [1.0.0-alpha.1]

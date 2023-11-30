@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "tolaserblade",
+  "version": "${version}",
+
+  "name": "ToLaserBlade",
+  "description": "Adds a Laser Blade.",
+  "authors": [
+    "Iunius118"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Iunius118/ToLaserBlade-BTA#readme",
+    "sources": "https://github.com/Iunius118/ToLaserBlade-BTA"
+  },
+
+  "license": "MIT License",
+  "icon": "assets/tolaserblade/tolaserblade_logo.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+        "com.github.iunius118.tolaserblade.ToLaserBlade"
+    ]
+  },
+  "mixins": [
+      "tolaserblade.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.13.3"
+  },
+  "suggests": {
+  }
+}
