@@ -4,21 +4,21 @@ import net.minecraft.core.block.Block;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ToolMaterial;
+import net.minecraft.core.item.tag.ItemTags;
 import net.minecraft.core.item.tool.ItemToolSword;
 
 public class ItemLBSword extends ItemToolSword {
-	private ToolMaterial material;
+	public static final ToolMaterial LASER_MATERIAL = new ToolMaterial().setDurability(0).setEfficiency(7.0F, 14.0F).setMiningLevel(3).setDamage(4).setBlockHitDelay(4);
 
-	public ItemLBSword(String name, int id, ToolMaterial enumtoolmaterial) {
-		super(name, id, enumtoolmaterial);
-
-		material = enumtoolmaterial;
+	public ItemLBSword(String name, int id) {
+		super(name, id, LASER_MATERIAL);
+		this.withTags(ItemTags.renderFullbright);
 		this.setMaxDamage(0);
 	}
 
 	@Override
 	public float getStrVsBlock(ItemStack itemstack, Block block) {
-		return material.getEfficiency(false);
+		return LASER_MATERIAL.getEfficiency(false);
 	}
 
 	@Override
