@@ -1,3 +1,13 @@
 # Cheatsheet
 ToLaserBlade-BTA v1.0.0
 
+## Items
+### Laser Blade
+- Default ID: 24530 (This can be changed in config/tolaserblade.cfg, `starting_item_id + 0`)
+- Tool type: sword
+- Durability: infinite
+- Basic attack damage: 12
+- Crafting on Crafting Table: G = Glowstone Dust; I = Iron Ingot, D = Diamond; R = Redstone
+  - GID;
+  - IDI;
+  - RIG;

@@ -34,12 +34,12 @@ public class ToLaserBlade implements ModInitializer {
 	public void onInitialize() {
 		// Register recipe
 		RecipeHelper.Crafting.createRecipe(LB_SWORD, 1, new Object[]{
-			" id",
-			"igi",
-			"ri ",
+			"gid",
+			"idi",
+			"rig",
+			'g', Item.dustGlowstone,
 			'i', Item.ingotIron,
 			'd', Item.diamond,
-			'q', Item.dustGlowstone,
 			'r', Item.dustRedstone});
 
 		LOGGER.info("ToLaserBlade initialized.");

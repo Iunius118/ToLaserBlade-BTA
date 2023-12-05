@@ -4,7 +4,6 @@ import net.minecraft.core.block.Block;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ToolMaterial;
-import net.minecraft.core.item.tag.ItemTags;
 import net.minecraft.core.item.tool.ItemToolSword;
 
 public class ItemLBSword extends ItemToolSword {
@@ -12,7 +11,6 @@ public class ItemLBSword extends ItemToolSword {
 
 	public ItemLBSword(String name, int id) {
 		super(name, id, LASER_MATERIAL);
-		this.withTags(ItemTags.renderFullbright);
 		this.setMaxDamage(0);
 	}
 
