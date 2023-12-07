@@ -6,7 +6,7 @@
 
 ## [1.0.0-alpha.1]
 ### Changed
-- Require Better than Adventure! 1.7.7.0_02.
+- Require Better than Adventure! Babric 1.7.7.0_02 and HalpLibe 2.7.0+.
 
 ### Added
 - Laser blade item and recipe.
