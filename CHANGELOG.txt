@@ -1,7 +1,12 @@
 # Change Log
-[ToLaserBlade (Better than Adventure)](https://github.com/Iunius118/ToLaserBlade).
-[Source](https://github.com/Iunius118/ToLaserBlade).
+[ToLaserBlade (for Better than Adventure!)](https://github.com/Iunius118/ToLaserBlade-BTA#readme).
+[Source](https://github.com/Iunius118/ToLaserBlade-BTA).
 
 ## [Unreleased]
 
 ## [1.0.0-alpha.1]
+### Changed
+- Require Better than Adventure! 1.7.7.0_02.
+
+### Added
+- Laser blade item and recipe.

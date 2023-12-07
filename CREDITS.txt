@@ -1,5 +1,5 @@
 # Credits
 ## Author
-ToLaserBlade (Better than Adventure)
+ToLaserBlade (for Better than Adventure!)
 Copyright (c) 2016 Iunius118
 https://github.com/Iunius118/ToLaserBlade

@@ -10,7 +10,8 @@
   ],
   "contact": {
     "homepage": "https://github.com/Iunius118/ToLaserBlade-BTA#readme",
-    "sources": "https://github.com/Iunius118/ToLaserBlade-BTA"
+    "sources": "https://github.com/Iunius118/ToLaserBlade-BTA",
+		"issues": "https://github.com/Iunius118/ToLaserBlade-BTA/issues"
   },
 
   "license": "MIT License",
