@@ -22,12 +22,14 @@ public class LBSwordRenderer {
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
 
 		// Transform for laser blade model
-		GL11.glTranslatef(0.858579F, 0.141421F, -0.0234375F);
+		GL11.glTranslatef(0.905719F, 0.0707107F, -0.0234375F);
 		// The following is equal to the right: GL11.glRotatef(45.0F, 0.0F, 0.0F, 1.0F); GL11.glRotatef(-95.0F, 0.0F, 1.0F, 0.0F);
 		GL11.glRotatef(102.753013F, 0.361063F, -0.871876F, 0.330857F);
-		// Fix scaling in third person
-		if (!isRenderingItemInFirstPerson(mc)) {
-			GL11.glScalef(-1.0F, 1.0F, 1.0F);
+		// Fix scaling
+		if (isRenderingItemInFirstPerson(mc)) {
+			GL11.glScalef(1.2F, 1.2F, 1.2F);
+		} else {
+			GL11.glScalef(-1.2F, 1.2F, 1.2F);
 		}
 
 		// Render hilt
