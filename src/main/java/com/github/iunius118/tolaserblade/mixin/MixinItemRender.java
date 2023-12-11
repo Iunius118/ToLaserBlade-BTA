@@ -1,7 +1,7 @@
 package com.github.iunius118.tolaserblade.mixin;
 
-import com.github.iunius118.tolaserblade.ToLaserBlade;
 import com.github.iunius118.tolaserblade.client.LBSwordRenderer;
+import com.github.iunius118.tolaserblade.common.ToLaserBlade;
 import net.minecraft.client.render.ItemRenderer;
 import net.minecraft.client.render.RenderBlocks;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;

@@ -1,4 +1,4 @@
-package com.github.iunius118.tolaserblade;
+package com.github.iunius118.tolaserblade.common;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.core.item.Item;

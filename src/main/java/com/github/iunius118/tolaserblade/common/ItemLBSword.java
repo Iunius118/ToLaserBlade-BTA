@@ -1,4 +1,4 @@
-package com.github.iunius118.tolaserblade;
+package com.github.iunius118.tolaserblade.common;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.tag.BlockTags;

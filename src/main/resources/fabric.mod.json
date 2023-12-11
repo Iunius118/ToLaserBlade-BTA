@@ -20,7 +20,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-        "com.github.iunius118.tolaserblade.ToLaserBlade"
+			"com.github.iunius118.tolaserblade.common.ToLaserBlade"
     ]
   },
   "mixins": [
