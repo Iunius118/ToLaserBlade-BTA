@@ -19,6 +19,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinItemRender {
 	@Shadow
 	private RenderBlocks renderBlocksInstance;
+	@Shadow
+	private int field_20099_f;
 
 	@Unique
 	private LBSwordRenderer lBSwordRenderer = new LBSwordRenderer();
@@ -38,7 +40,7 @@ public class MixinItemRender {
 				GL11.glTranslatef(-0.9375F, -0.0625F, 0.0F);
 			}
 
-			lBSwordRenderer.doRender(entity, itemstack, handheldTransform);
+			lBSwordRenderer.doRender(entity, itemstack, handheldTransform, field_20099_f < 0);
 			GL11.glDisable(32826);
 			GL11.glPopMatrix();
 

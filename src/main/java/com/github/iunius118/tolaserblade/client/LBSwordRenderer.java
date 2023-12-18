@@ -14,7 +14,7 @@ import org.lwjgl.util.vector.Vector4f;
 import java.util.List;
 
 public class LBSwordRenderer {
-	public void doRender(Entity entity, ItemStack itemstack, boolean handheldTransform) {
+	public void doRender(Entity entity, ItemStack itemstack, boolean handheldTransform, boolean isXMirrored) {
 		Minecraft mc = Minecraft.getMinecraft(Minecraft.class);
 		Tessellator tessellator = Tessellator.instance;
 
@@ -26,10 +26,10 @@ public class LBSwordRenderer {
 		// The following is equal to the right: GL11.glRotatef(45.0F, 0.0F, 0.0F, 1.0F); GL11.glRotatef(-95.0F, 0.0F, 1.0F, 0.0F);
 		GL11.glRotatef(102.753013F, 0.361063F, -0.871876F, 0.330857F);
 		// Fix scaling
-		if (isRenderingItemInFirstPerson(mc)) {
-			GL11.glScalef(1.2F, 1.2F, 1.2F);
-		} else {
+		if (isXMirrored) {
 			GL11.glScalef(-1.2F, 1.2F, 1.2F);
+		} else {
+			GL11.glScalef(1.2F, 1.2F, 1.2F);
 		}
 
 		// Render hilt
