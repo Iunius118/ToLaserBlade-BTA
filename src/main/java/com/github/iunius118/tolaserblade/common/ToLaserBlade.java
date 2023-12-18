@@ -1,7 +1,9 @@
 package com.github.iunius118.tolaserblade.common;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.item.Item;
+import net.minecraft.core.item.ItemStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.ItemHelper;
@@ -33,15 +35,23 @@ public class ToLaserBlade implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		// Register recipe
-		RecipeHelper.Crafting.createRecipe(LB_SWORD, 1, new Object[]{
-			"gid",
-			"idi",
-			"rig",
-			'g', Item.dustGlowstone,
-			'i', Item.ingotIron,
-			'd', Item.diamond,
-			'r', Item.dustRedstone});
+		addLaserBladeRecipes();
+
 
 		LOGGER.info("ToLaserBlade initialized.");
+	}
+
+	private void addLaserBladeRecipes() {
+		for (int i = 0; i < 16; i++) {
+			RecipeHelper.Crafting.createRecipe(new ItemStack(LB_SWORD, 1, i), new Object[]{
+				"gsd",
+				"sLs",
+				"rsg",
+				'g', Item.dustGlowstone,
+				's', Item.ingotSteel,
+				'd', Item.diamond,
+				'L', new ItemStack(Block.lampIdle, 1, i),
+				'r', Item.dustRedstone});
+		}
 	}
 }

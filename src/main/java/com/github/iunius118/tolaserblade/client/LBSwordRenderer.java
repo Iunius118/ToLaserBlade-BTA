@@ -9,7 +9,6 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.MathHelper;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL14;
-import org.lwjgl.util.vector.Vector4f;
 
 import java.util.List;
 
@@ -32,23 +31,30 @@ public class LBSwordRenderer {
 			GL11.glScalef(1.2F, 1.2F, 1.2F);
 		}
 
+		// Get laser blade color
+		boolean isSubMode = false;
+		int metadata = itemstack.getMetadata();
+		LaserBladeColor color = LaserBladeColor.COLORS[metadata];
+
 		// Render hilt
-		renderHilt(tessellator, getBrightness(mc, entity));
+		renderHilt(tessellator, color.gripColor, getBrightness(mc, entity));
 
 		// Change render mode for laser blades
 		GL11.glDisable(GL11.GL_LIGHTING);
 		GL11.glEnable(GL11.GL_BLEND);
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
-		//GL14.glBlendEquation(GL14.GL_FUNC_REVERSE_SUBTRACT);
 
 		// Render blades
-		renderBlade(tessellator, LBSwordModel.BLADE_OUT_QUADS, new Vector4f(1.0F, 0.0F, 0.0F, LBSwordModel.BLADE_OUT_COLOR.w));
-		renderBlade(tessellator, LBSwordModel.BLADE_MID_QUADS, new Vector4f(1.0F, 0.0F, 0.0F, LBSwordModel.BLADE_MID_COLOR.w));
-		renderBlade(tessellator, LBSwordModel.BLADE_IN_QUADS, LBSwordModel.BLADE_IN_COLOR);
+		isSubMode = setBlendMode(color.isOutSubColor, isSubMode);
+		renderBlade(tessellator, LBSwordModel.BLADE_OUT_QUADS, color.outerColor, LBSwordModel.BLADE_OUT_COLOR.w);
+		isSubMode = setBlendMode(color.isMidSubColor, isSubMode);
+		renderBlade(tessellator, LBSwordModel.BLADE_MID_QUADS, color.outerColor, LBSwordModel.BLADE_MID_COLOR.w);
+		isSubMode = setBlendMode(color.isInSubColor, isSubMode);
+		renderBlade(tessellator, LBSwordModel.BLADE_IN_QUADS, color.innerColor, LBSwordModel.BLADE_IN_COLOR.w);
 
 		// Restore render settings
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		GL14.glBlendEquation(GL14.GL_FUNC_ADD);
+		setBlendMode(false, isSubMode);
 		GL11.glDisable(GL11.GL_BLEND);
 		GL11.glEnable(GL11.GL_LIGHTING);
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
@@ -72,20 +78,33 @@ public class LBSwordRenderer {
 		}
 	}
 
-	private void renderHilt(Tessellator tessellator, float brightness) {
-		Vector4f color = LBSwordModel.Hilt_COLOR;
-		GL11.glColor4f(color.x * brightness, color.y * brightness, color.z * brightness, color.w);
+	private void renderHilt(Tessellator tessellator, Color4F color, float brightness) {
+		GL11.glColor4f(color.r * brightness, color.g * brightness, color.b * brightness, color.a);
 
 		for (SimpleQuad quad : LBSwordModel.HILT_QUADS) {
 			quad.renderQuad(tessellator);
 		}
 	}
 
-	private void renderBlade(Tessellator tessellator, List<SimpleQuad> quads, Vector4f color) {
-		GL11.glColor4f(color.x, color.y, color.z, color.w);
+	private void renderBlade(Tessellator tessellator, List<SimpleQuad> quads, Color4F color, float opacity) {
+		GL11.glColor4f(color.r, color.g, color.b, color.a * opacity);
 
 		for (SimpleQuad quad : quads) {
 			quad.renderQuad(tessellator);
+		}
+	}
+
+	private boolean setBlendMode(boolean makeSubMode, boolean isSubMode) {
+		if (makeSubMode == isSubMode) {
+			return isSubMode;
+		} else if (!makeSubMode) {
+			// !makeSubMode && isSubMode
+			GL14.glBlendEquation(GL14.GL_FUNC_ADD);
+			return false;
+		} else {
+			// makeSubMode && !isSubMode
+			GL14.glBlendEquation(GL14.GL_FUNC_REVERSE_SUBTRACT);
+			return true;
 		}
 	}
 }

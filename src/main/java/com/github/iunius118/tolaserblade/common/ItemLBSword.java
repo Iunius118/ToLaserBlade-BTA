@@ -11,6 +11,7 @@ public class ItemLBSword extends ItemToolSword {
 
 	public ItemLBSword(String name, int id) {
 		super(name, id, LASER_MATERIAL);
+		this.setHasSubtypes(true);
 		this.setMaxDamage(0);
 	}
 
