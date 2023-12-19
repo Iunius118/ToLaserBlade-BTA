@@ -30,13 +30,12 @@ public class ToLaserBlade implements ModInitializer {
 	}
 
 	// Register item
-	public static final Item LB_SWORD = ItemHelper.createItem(MOD_ID, new ItemLBSword("laser_blade", STARTING_ITEM_ID), "laser_blade", "laser_blade.png");
+	public static final Item LB_SWORD = ItemHelper.createItem(MOD_ID, new ItemLBSword("laser_blade", STARTING_ITEM_ID), "laser_blade");
 
 	@Override
 	public void onInitialize() {
 		// Register recipe
 		addLaserBladeRecipes();
-
 
 		LOGGER.info("ToLaserBlade initialized.");
 	}

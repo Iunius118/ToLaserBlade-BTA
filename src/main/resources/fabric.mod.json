@@ -21,7 +21,10 @@
   "entrypoints": {
     "main": [
 			"com.github.iunius118.tolaserblade.common.ToLaserBlade"
-    ]
+    ],
+		"client": [
+			"com.github.iunius118.tolaserblade.client.ToLaserBladeClient"
+		]
   },
   "mixins": [
       "tolaserblade.mixins.json"

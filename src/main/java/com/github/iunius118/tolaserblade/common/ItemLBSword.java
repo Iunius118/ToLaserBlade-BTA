@@ -1,5 +1,6 @@
 package com.github.iunius118.tolaserblade.common;
 
+import com.github.iunius118.tolaserblade.client.ToLaserBladeClient;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.ItemStack;
@@ -13,6 +14,11 @@ public class ItemLBSword extends ItemToolSword {
 		super(name, id, LASER_MATERIAL);
 		this.setHasSubtypes(true);
 		this.setMaxDamage(0);
+	}
+
+	@Override
+	public int getIconFromDamage(int id) {
+		return ToLaserBladeClient.LB_SWORD_ICONS[id & 0xF];
 	}
 
 	@Override
