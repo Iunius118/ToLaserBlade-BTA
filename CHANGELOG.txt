@@ -4,6 +4,17 @@
 
 ## [Unreleased]
 
+## [1.0.0-beta.1]
+### Added
+- 15 different colors to laser blade. The color of the laser blade is determined by the color of the lamp in the crafting material.
+
+### Changed
+- Laser blade recipes now require steel ingots and lamp.
+
+### Fixed
+- Size of rendered laser blade.
+- Rendering of laser blade in preview area in player's inventory.
+
 ## [1.0.0-alpha.1]
 ### Changed
 - Require Better than Adventure! Babric 1.7.7.0_02 and HalpLibe 2.7.0+.

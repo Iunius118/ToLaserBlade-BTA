@@ -7,7 +7,8 @@ ToLaserBlade-BTA v1.0.0
 - Tool type: sword
 - Durability: infinite
 - Basic attack damage: 12
-- Crafting on Crafting Table: G = Glowstone Dust; I = Iron Ingot, D = Diamond; R = Redstone
-  - GID;
-  - IDI;
-  - RIG;
+- Crafting on Crafting Table: G = Glowstone Dust; S = Steel Ingot, D = Diamond; L = Lamp; R = Redstone
+  - GSD;
+  - SLS;
+  - RSG;
+- Laser blades have 16 different colors, which are determined by the color of the lamp in the crafting material
