@@ -6,8 +6,8 @@
 
 ## Requirements
 
-- Better than Adventure! Babric 1.7.7.0_02
-- HalpLibe 2.7.0+ (usually included in BTA Babric instance)
+- Better than Adventure! Babric 1.7.7.0_02 or later
+- HalpLibe 2.7.0 or later (usually included in BTA Babric instance)
 
 ## Mod Description
 
