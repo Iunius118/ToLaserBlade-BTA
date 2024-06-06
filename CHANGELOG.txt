@@ -1,8 +1,13 @@
 # Change Log
-[ToLaserBlade (for Better than Adventure!)](https://github.com/Iunius118/ToLaserBlade-BTA#readme).
+[ToLaserBlade (for Better than Adventure!)](https://modrinth.com/mod/tolaserblade/versions?s=true&g=b1.7.3).
 [Source](https://github.com/Iunius118/ToLaserBlade-BTA).
 
 ## [Unreleased]
+
+## [1.1.0]
+### Changed
+- Port to BTA 7.1_01.
+- Require Better than Adventure! Babric 7.1_01 and HalpLibe 3.5.4.
 
 ## [1.0.0-beta.1]
 ### Added

@@ -11,7 +11,7 @@
   "contact": {
     "homepage": "https://github.com/Iunius118/ToLaserBlade-BTA#readme",
     "sources": "https://github.com/Iunius118/ToLaserBlade-BTA",
-		"issues": "https://github.com/Iunius118/ToLaserBlade-BTA/issues"
+    "issues": "https://github.com/Iunius118/ToLaserBlade-BTA/issues"
   },
 
   "license": "MIT License",
@@ -20,18 +20,28 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-			"com.github.iunius118.tolaserblade.common.ToLaserBlade"
+      "com.github.iunius118.tolaserblade.common.ToLaserBlade"
     ],
-		"client": [
-			"com.github.iunius118.tolaserblade.client.ToLaserBladeClient"
-		]
+    "beforeGameStart": [
+      "com.github.iunius118.tolaserblade.common.ToLaserBlade"
+    ],
+    "afterGameStart": [
+      "com.github.iunius118.tolaserblade.common.ToLaserBlade"
+    ],
+    "recipesReady": [
+      "com.github.iunius118.tolaserblade.common.ToLaserBlade"
+    ],
+    "client": [
+      "com.github.iunius118.tolaserblade.client.ToLaserBladeClient"
+    ]
   },
   "mixins": [
       "tolaserblade.mixins.json"
   ],
 
   "depends": {
-    "fabricloader": ">=0.13.3"
+    "minecraft": "~7.1",
+    "fabricloader": ">=0.15.5"
   },
   "suggests": {
   }

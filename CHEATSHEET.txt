@@ -1,14 +1,30 @@
 # Cheatsheet
-ToLaserBlade-BTA v1.0.0
+
+[ToLaserBlade-BTA](https://github.com/Iunius118/ToLaserBlade-BTA)
+v1.1.0.
+
+ToLaserBlade for Better than Adventure!
+
+## Requirements
+
+- Better than Adventure! Babric 7.1_01
+- HalpLibe 3.5.4 (usually included in BTA Babric instance)
 
 ## Items
+
 ### Laser Blade
-- Default ID: 24530 (This can be changed in config/tolaserblade.cfg, `starting_item_id + 0`)
-- Tool type: sword
-- Durability: infinite
+
+- Default ID: 24530 (This can be changed in `config/tolaserblade.cfg`, and equals `starting_item_id`)
+- Tool type: Sword
+- Durability: Infinite
 - Basic attack damage: 12
-- Crafting on Crafting Table: G = Glowstone Dust; S = Steel Ingot, D = Diamond; L = Lamp; R = Redstone
-  - GSD;
-  - SLS;
-  - RSG;
-- Laser blades have 16 different colors, which are determined by the color of the lamp in the crafting material
+
+Crafting (shaped recipe):
+
+    Barrel of Hot Chili Sauce
+    2 Glowstone Dusts (G), 4 Steel Ingots (S), Diamond (D), Lamp (L), Redstone
+    | G | S | D |
+    | S | L | S |
+    | R | S | G |
+
+Laser blades have 16 different colors, which are determined by the color of the lamp in the crafting material.
