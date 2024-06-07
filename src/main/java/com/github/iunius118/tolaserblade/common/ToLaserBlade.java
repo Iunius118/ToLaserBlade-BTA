@@ -20,7 +20,7 @@ public class ToLaserBlade implements ModInitializer, GameStartEntrypoint, Recipe
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	// Mod item
-	public static Item lb_sword;
+	public static Item lbSword;
 
 	@Override
 	public void onInitialize() {
@@ -37,7 +37,7 @@ public class ToLaserBlade implements ModInitializer, GameStartEntrypoint, Recipe
 		config.updateConfig();
 
 		// Register item
-		lb_sword = ItemHelper.createItem(MOD_ID, new ItemLBSword("laser_blade", startingItemId++).setKey("laser_blade"));
+		lbSword = ItemHelper.createItem(MOD_ID, new ItemLBSword("laser_blade", startingItemId++).setKey("laser_blade"));
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class ToLaserBlade implements ModInitializer, GameStartEntrypoint, Recipe
 				.addInput('d', Item.diamond)
 				.addInput('L', new ItemStack(Block.lampIdle, 1, i))
 				.addInput('r', Item.dustRedstone)
-				.create("laser_blade_" + i, new ItemStack(lb_sword, 1, i));
+				.create("laser_blade_" + i, new ItemStack(lbSword, 1, i));
 		}
 	}
 

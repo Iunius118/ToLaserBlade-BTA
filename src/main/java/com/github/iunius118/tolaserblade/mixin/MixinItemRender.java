@@ -27,7 +27,7 @@ public class MixinItemRender {
 
 	@Inject(method = "renderItem(Lnet/minecraft/core/entity/Entity;Lnet/minecraft/core/item/ItemStack;Z)V", at = @At("HEAD"), cancellable = true)
 	private void onRenderItem(Entity entity, ItemStack itemstack, boolean handheldTransform, CallbackInfo ci) {
-		if (itemstack.itemID == ToLaserBlade.lb_sword.id) {
+		if (itemstack.itemID == ToLaserBlade.lbSword.id) {
 			GL11.glPushMatrix();
 			BlockModelRenderBlocks.setRenderBlocks(this.renderBlocksInstance);
 			GL11.glEnable(32826);
