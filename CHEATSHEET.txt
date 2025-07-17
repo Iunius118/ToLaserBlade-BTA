@@ -1,27 +1,26 @@
 # Cheatsheet
 
 [ToLaserBlade-BTA](https://github.com/Iunius118/ToLaserBlade-BTA)
-v1.1.0.
+v1.2.0.
 
 ToLaserBlade for Better than Adventure!
 
 ## Requirements
 
-- Better than Adventure! Babric 7.1_01
-- HalpLibe 3.5.4 (usually included in BTA Babric instance)
+- Better than Adventure! Babric 7.3_04
+- HalpLibe 5.2.4 (usually included in BTA Babric instance)
 
 ## Items
 
 ### Laser Blade
 
 - Default ID: 24530 (This can be changed in `config/tolaserblade.cfg`, and equals `starting_item_id`)
-- Tool type: Sword
+- Tool Type: Sword
 - Durability: Infinite
-- Basic attack damage: 12
+- Basic Attack Damage: 12
 
 Crafting (shaped recipe):
 
-    Barrel of Hot Chili Sauce
     2 Glowstone Dusts (G), 4 Steel Ingots (S), Diamond (D), Lamp (L), Redstone
     | G | S | D |
     | S | L | S |

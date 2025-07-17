@@ -1,5 +1,6 @@
 # Credits
+## ToLaserBlade (for Better than Adventure!)
+[ToLaserBlade-BTA](https://github.com/Iunius118/ToLaserBlade-BTA)
+
 ## Author
-ToLaserBlade (for Better than Adventure!)
-Copyright (c) 2016 Iunius118
-https://github.com/Iunius118/ToLaserBlade
+- Iunius118
