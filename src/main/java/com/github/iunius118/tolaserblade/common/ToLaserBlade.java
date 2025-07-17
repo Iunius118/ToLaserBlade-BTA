@@ -1,9 +1,11 @@
 package com.github.iunius118.tolaserblade.common;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.core.block.Block;
+import net.minecraft.core.block.Blocks;
+import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.item.Items;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.ItemBuilder;
@@ -13,8 +15,7 @@ import turniplabs.halplibe.util.RecipeEntrypoint;
 import turniplabs.halplibe.util.TomlConfigHandler;
 import turniplabs.halplibe.util.toml.Toml;
 
-import java.util.Properties;
-
+import java.util.stream.IntStream;
 
 public class ToLaserBlade implements ModInitializer, GameStartEntrypoint, RecipeEntrypoint {
 	public static final String MOD_ID = "tolaserblade";
@@ -57,17 +58,26 @@ public class ToLaserBlade implements ModInitializer, GameStartEntrypoint, Recipe
 		for (int i = 0; i < 16; i++) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("gsd", "sLs", "rsg")
-				.addInput('g', Item.dustGlowstone)
-				.addInput('s', Item.ingotSteel)
-				.addInput('d', Item.diamond)
-				.addInput('L', new ItemStack(Block.lampIdle, 1, i))
-				.addInput('r', Item.dustRedstone)
-				.create("laser_blade_" + i, new ItemStack(lbSword, 1, i));
+				.addInput('g', Items.DUST_GLOWSTONE)
+				.addInput('s', Items.INGOT_STEEL)
+				.addInput('d', Items.DIAMOND)
+				.addInput('L', new ItemStack(Blocks.LAMP_IDLE, 1, i))
+				.addInput('r', Items.DUST_REDSTONE)
+				.create(String.format("laser_blade_%02d", i), new ItemStack(lbSword, 1, i));
 		}
 	}
 
 	@Override
 	public void initNamespaces() {
 		RecipeBuilder.initNameSpace(MOD_ID);
+		registerItemGroups();
+	}
+
+	private void registerItemGroups() {
+		// Register item group for laser blades
+		Object[] laserBlades = IntStream.rangeClosed(0, 15)
+			.mapToObj(i -> new ItemStack(lbSword, 1, i))
+			.toArray();
+		Registries.ITEM_GROUPS.register(String.format("%s:item/%s", MOD_ID, "laser_blades"), Registries.stackListOf(laserBlades));
 	}
 }
