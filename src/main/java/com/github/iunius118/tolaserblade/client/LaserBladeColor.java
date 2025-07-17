@@ -3,7 +3,7 @@ package com.github.iunius118.tolaserblade.client;
 public class LaserBladeColor {
 	public static final LaserBladeColor[] COLORS = new LaserBladeColor[]{
 		new LaserBladeColor(0xFF999999, 0xFFFF0000, 0xFFFFFFFF, false, false, false),
-		new LaserBladeColor(0xFF999999, 0xFFFF681F, 0xFFFFFFFF, false, false, false),
+		new LaserBladeColor(0xFF3E3C3B, 0xFFFF681F, 0xFFEFA337, false, false, false),
 		new LaserBladeColor(0xFF999999, 0xFFFF00CC, 0xFFFFFFFF, false, false, false),
 		new LaserBladeColor(0xFF999999, 0xFF0080FF, 0xFFFFFFFF, false, false, false),
 		new LaserBladeColor(0xFF999999, 0xFFFFC400, 0xFFFFFFFF, false, false, false),
