@@ -14,7 +14,7 @@
     "issues": "https://github.com/Iunius118/ToLaserBlade-BTA/issues"
   },
 
-  "license": "MIT License",
+  "license": "MIT license",
   "icon": "assets/tolaserblade/tolaserblade_logo.png",
 
   "environment": "*",
@@ -33,7 +33,10 @@
     ],
     "client": [
       "com.github.iunius118.tolaserblade.client.ToLaserBladeClient"
-    ]
+    ],
+		"initModels": [
+			"com.github.iunius118.tolaserblade.client.ToLaserBladeClient"
+		]
   },
   "mixins": [
       "tolaserblade.mixins.json"

@@ -4,6 +4,7 @@
 
 ## [Unreleased]
 ### Changed
+- Port to BTA 7.3_04.
 - Require Better than Adventure! Babric 7.3_04 and HalpLibe 5.2.4.
 
 ## [1.1.0]

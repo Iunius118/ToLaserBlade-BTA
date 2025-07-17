@@ -1,6 +1,6 @@
 package com.github.iunius118.tolaserblade.client;
 
-import net.minecraft.client.render.Tessellator;
+import net.minecraft.client.render.tessellator.Tessellator;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.Vector3f;
 
