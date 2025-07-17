@@ -6,11 +6,12 @@ import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import turniplabs.halplibe.helper.ItemHelper;
+import turniplabs.halplibe.helper.ItemBuilder;
 import turniplabs.halplibe.helper.RecipeBuilder;
-import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.RecipeEntrypoint;
+import turniplabs.halplibe.util.TomlConfigHandler;
+import turniplabs.halplibe.util.toml.Toml;
 
 import java.util.Properties;
 
@@ -18,6 +19,10 @@ import java.util.Properties;
 public class ToLaserBlade implements ModInitializer, GameStartEntrypoint, RecipeEntrypoint {
 	public static final String MOD_ID = "tolaserblade";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+	// Mod Config
+	public static TomlConfigHandler config;
+	private static final Toml TOML = new Toml("ToLaserBlade Config");
 
 	// Mod item
 	public static Item lbSword;
@@ -30,14 +35,14 @@ public class ToLaserBlade implements ModInitializer, GameStartEntrypoint, Recipe
 	@Override
 	public void beforeGameStart() {
 		// Handle config
-		Properties prop = new Properties();
-		prop.setProperty("starting_item_id", "24530");
-		ConfigHandler config = new ConfigHandler(MOD_ID, prop);
-		int startingItemId = config.getInt("starting_item_id");
-		config.updateConfig();
+		TOML.addCategory("IDs")
+			.addEntry("starting_item_id", 24530);
+		config = new TomlConfigHandler(MOD_ID, TOML);
+		int startingItemId = config.getInt("IDs.starting_item_id");
 
 		// Register item
-		lbSword = ItemHelper.createItem(MOD_ID, new ItemLBSword("laser_blade", startingItemId++).setKey("laser_blade"));
+		lbSword = new ItemBuilder(MOD_ID)
+			.build(new ItemLBSword("laser_blade", String.format("%s:item/%s", MOD_ID, "laser_blade"), startingItemId++));
 	}
 
 	@Override
