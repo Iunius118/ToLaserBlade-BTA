@@ -6,6 +6,7 @@ import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
+import net.minecraft.core.player.inventory.menu.MenuInventoryCreative;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.ItemBuilder;
@@ -48,7 +49,30 @@ public class ToLaserBlade implements ModInitializer, GameStartEntrypoint, Recipe
 
 	@Override
 	public void afterGameStart() {
+		addItemsToCreativeInventory();
+	}
 
+	private void addItemsToCreativeInventory() {
+		// Add items to creative inventory
+		int itemIndex = -1;
+
+		// Search for index of laser blade in creative inventory
+		for (int i = 0; i < MenuInventoryCreative.creativeItems.size(); i++) {
+			ItemStack itemStack = MenuInventoryCreative.creativeItems.get(i);
+			if (itemStack.getItem() == lbSword && itemStack.getMetadata() == 0) {
+				itemIndex = i;
+				break;
+			}
+		}
+
+		// Insert colored variants of laser blade to creative inventory
+		if (itemIndex >= 0) {
+			for (int meta = 1; meta < 16; meta++) {
+				MenuInventoryCreative.creativeItems.add(itemIndex + meta, new ItemStack(lbSword, 1, meta));
+			}
+
+			MenuInventoryCreative.creativeItemsCount += 15;
+		}
 	}
 
 	@Override
