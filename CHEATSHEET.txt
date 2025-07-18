@@ -21,7 +21,7 @@ ToLaserBlade for Better than Adventure!
 
 Crafting (shaped recipe):
 
-    2 Glowstone Dusts (G), 4 Steel Ingots (S), Diamond (D), Lamp (L), Redstone
+    2 Glowstone Dusts (G), 4 Steel Ingots (S), Diamond (D), Lamp (L), Redstone (R)
     | G | S | D |
     | S | L | S |
     | R | S | G |

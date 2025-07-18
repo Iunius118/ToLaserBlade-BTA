@@ -3,6 +3,8 @@
 [Source](https://github.com/Iunius118/ToLaserBlade-BTA).
 
 ## [Unreleased]
+
+## [1.2.0]
 ### Changed
 - Port to BTA 7.3_04.
 - Require Better than Adventure! Babric 7.3_04 and HalpLibe 5.2.4.
