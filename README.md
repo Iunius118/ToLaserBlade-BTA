@@ -23,7 +23,7 @@ A sword type item with unlimited durability.
 - Metadata: [0-15] Color of laser blade
 - Durability: Infinite
 - Attack Damage: 12
-- Recipe: 2 glowstone dusts, 4 steel Ingots, 1 diamond, 1 lamp, and 1 redstone.  
+- Recipe: 2 glowstone dusts, 4 steel Ingots, 1 diamond, 1 lamp of any color, and 1 redstone.  
 Laser Blade items are available in 16 different colors.  
 ![Craft recipe {G, S, D; S, L, S; R, S, G}](./docs/media/recipes_laser_blades_v120.gif "Laser blade recipes")
 
