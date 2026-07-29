@@ -1,14 +1,14 @@
 # Cheatsheet
 
 [ToLaserBlade-BTA](https://github.com/Iunius118/ToLaserBlade-BTA)
-v1.2.0.
+v1.3.0+8.0.1.
 
 ToLaserBlade for Better than Adventure!
 
 ## Requirements
 
-- Better than Adventure! Babric 7.3_04
-- HalpLibe 5.2.4 (usually included in BTA Babric instance)
+- Better than Adventure! Fabric 8.0.1
+- HalpLibe 6.1.3+8.0 (usually included in BTA Fabric instance)
 
 ## Items
 
@@ -21,7 +21,7 @@ ToLaserBlade for Better than Adventure!
 
 Crafting (shaped recipe):
 
-    2 Glowstone Dusts (G), 4 Steel Ingots (S), Diamond (D), Lamp (L), Redstone (R)
+    2 Glowstone Dusts (G), 4 Steel Ingots (S), Diamond (D), Lamp of any color (L), Redstone (R)
     | G | S | D |
     | S | L | S |
     | R | S | G |

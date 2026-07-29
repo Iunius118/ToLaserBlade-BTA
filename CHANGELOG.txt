@@ -4,6 +4,17 @@
 
 ## [Unreleased]
 
+## [1.3.0+8.0.1]
+### Added
+- Add `tolaserblade/laser_blade` shader for laser blade.
+
+### Changed
+- Port to BTA 8.0.1.
+- Require Better than Adventure! Fabric 8.0.1 and HalpLibe 6.1.3+8.0.
+
+### Fix
+- Change item description of laser blade.
+
 ## [1.2.0]
 ### Changed
 - Port to BTA 7.3_04.

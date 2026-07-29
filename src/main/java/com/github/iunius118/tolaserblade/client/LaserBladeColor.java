@@ -1,6 +1,9 @@
 package com.github.iunius118.tolaserblade.client;
 
-public class LaserBladeColor {
+import org.jetbrains.annotations.NotNull;
+
+public record LaserBladeColor(@NotNull Color4F gripColor, @NotNull Color4F outerColor, @NotNull Color4F innerColor,
+                              boolean isOutSubColor, boolean isMidSubColor, boolean isInSubColor) {
 	public static final LaserBladeColor[] COLORS = new LaserBladeColor[]{
 		new LaserBladeColor(0xFF999999, 0xFFFF0000, 0xFFFFFFFF, false, false, false),
 		new LaserBladeColor(0xFF3E3C3B, 0xFFFF681F, 0xFFEFA337, false, false, false),
@@ -20,19 +23,9 @@ public class LaserBladeColor {
 		new LaserBladeColor(0xFF333333, 0xFF0000FF, 0xFFFFFFFF, false, false, true)
 	};
 
-	public final Color4F gripColor;
-	public final Color4F outerColor;
-	public final Color4F innerColor;
-	public final boolean isOutSubColor;
-	public final boolean isMidSubColor;
-	public final boolean isInSubColor;
-
-	private LaserBladeColor(int gripColor, int outerColor, int innerColor, boolean isOutSubColor, boolean isMidSubColor, boolean isInSubColor) {
-		this.gripColor = Color4F.of(gripColor);
-		this.outerColor = Color4F.of(outerColor);
-		this.innerColor = Color4F.of(innerColor);
-		this.isOutSubColor = isOutSubColor;
-		this.isMidSubColor = isMidSubColor;
-		this.isInSubColor = isInSubColor;
+	private LaserBladeColor(int gripColor, int outerColor, int innerColor,
+	                        boolean isOutSubColor, boolean isMidSubColor, boolean isInSubColor) {
+		this(Color4F.of(gripColor), Color4F.of(outerColor), Color4F.of(innerColor),
+			isOutSubColor, isMidSubColor, isInSubColor);
 	}
 }

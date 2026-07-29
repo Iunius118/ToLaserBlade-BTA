@@ -1,51 +1,37 @@
 {
-  "schemaVersion": 1,
-  "id": "tolaserblade",
-  "version": "${version}",
-
-  "name": "ToLaserBlade",
-  "description": "Adds a Laser Blade.",
-  "authors": [
-    "Iunius118"
-  ],
-  "contact": {
-    "homepage": "https://github.com/Iunius118/ToLaserBlade-BTA#readme",
-    "sources": "https://github.com/Iunius118/ToLaserBlade-BTA",
-    "issues": "https://github.com/Iunius118/ToLaserBlade-BTA/issues"
-  },
-
-  "license": "MIT license",
-  "icon": "assets/tolaserblade/tolaserblade_logo.png",
-
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "com.github.iunius118.tolaserblade.common.ToLaserBlade"
-    ],
-    "beforeGameStart": [
-      "com.github.iunius118.tolaserblade.common.ToLaserBlade"
-    ],
-    "afterGameStart": [
-      "com.github.iunius118.tolaserblade.common.ToLaserBlade"
-    ],
-    "recipesReady": [
-      "com.github.iunius118.tolaserblade.common.ToLaserBlade"
-    ],
-    "client": [
-      "com.github.iunius118.tolaserblade.client.ToLaserBladeClient"
-    ],
-		"initModels": [
+	"schemaVersion": 1,
+	"id": "tolaserblade",
+	"version": "${version}",
+	"name": "ToLaserBlade",
+	"description": "Adds a Laser Blade.",
+	"authors": [
+		"Iunius118"
+	],
+	"contact": {
+		"homepage": "https://github.com/Iunius118/ToLaserBlade-BTA#readme",
+		"sources": "https://github.com/Iunius118/ToLaserBlade-BTA",
+		"issues": "https://github.com/Iunius118/ToLaserBlade-BTA/issues"
+	},
+	"license": "MIT License",
+	"icon": "assets/tolaserblade/tolaserblade_logo.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.github.iunius118.tolaserblade.common.ToLaserBlade"
+		],
+		"client": [
 			"com.github.iunius118.tolaserblade.client.ToLaserBladeClient"
 		]
-  },
-  "mixins": [
-      "tolaserblade.mixins.json"
-  ],
+	},
+	"mixins": [
+		"tolaserblade.mixins.json"
+	],
 
-  "depends": {
-    "minecraft": "*",
-    "fabricloader": ">=0.15.5"
-  },
-  "suggests": {
-  }
+	"depends": {
+		"fabricloader": ">=${fabricloader}",
+		"minecraft": "*",
+		"java": ">=${java}"
+	},
+	"suggests": {
+	}
 }

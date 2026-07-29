@@ -2,33 +2,24 @@ package com.github.iunius118.tolaserblade.client;
 
 import com.github.iunius118.tolaserblade.common.ToLaserBlade;
 import net.fabricmc.api.ClientModInitializer;
-import net.minecraft.client.render.EntityRenderDispatcher;
-import net.minecraft.client.render.TileEntityRenderDispatcher;
-import net.minecraft.client.render.block.color.BlockColorDispatcher;
-import net.minecraft.client.render.block.model.BlockModelDispatcher;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
-import turniplabs.halplibe.util.ModelEntrypoint;
+import net.minecraft.client.render.renderer.Shaders;
+import net.minecraft.client.render.shader.Shader;
+import turniplabs.halplibe.event.defs.ClientEvents;
+import turniplabs.halplibe.util.dependency.Key;
 
-public class ToLaserBladeClient implements ClientModInitializer, ModelEntrypoint {
+public class ToLaserBladeClient implements ClientModInitializer {
+	// Register mod shader
+	public static final Shader LASER_BLADE_SHADER = Shaders.register("tolaserblade/laser_blade", new Shader());
 
 	@Override
-	public void onInitializeClient() {}
-
-	@Override
-	public void initBlockModels(BlockModelDispatcher dispatcher) {}
-
-	@Override
-	public void initItemModels(ItemModelDispatcher dispatcher) {
-		// Register item models
-		dispatcher.addDispatch(ToLaserBlade.lbSword, new ItemModelLBSword(ToLaserBlade.lbSword, null));
+	public void onInitializeClient() {
+		// Register event listeners
+		ClientEvents.ITEM_MODEL_RELOAD.listen(Key.of(ToLaserBlade.MOD_ID), this::initItemModels);
 	}
 
-	@Override
-	public void initEntityModels(EntityRenderDispatcher dispatcher) {}
-
-	@Override
-	public void initTileEntityModels(TileEntityRenderDispatcher dispatcher) {}
-
-	@Override
-	public void initBlockColors(BlockColorDispatcher dispatcher) {}
+	private void initItemModels(ItemModelDispatcher dispatcher) {
+		// Register item models
+		dispatcher.addDispatch(ToLaserBlade.lbSword, new ItemModelLBSword(ToLaserBlade.lbSword));
+	}
 }
