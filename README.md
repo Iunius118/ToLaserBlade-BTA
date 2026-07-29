@@ -10,8 +10,8 @@
 
 ## Requirements
 
-- Better than Adventure! Babric 7.3_04
-- HalpLibe 5.2.4 (usually included in BTA Babric instance)
+- Better than Adventure! Fabric 8.0.1
+- HalpLibe 6.1.3+8.0 (usually included in BTA Fabric instance)
 
 ## Mod Description
 
