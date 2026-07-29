@@ -1,7 +1,6 @@
 package com.github.iunius118.tolaserblade.client;
 
-import net.minecraft.client.render.tessellator.Tessellator;
-import org.lwjgl.opengl.GL11;
+import net.minecraft.client.render.tessellator.TessellatorGeneral;
 import org.lwjgl.util.vector.Vector3f;
 
 public class SimpleQuad {
@@ -17,16 +16,20 @@ public class SimpleQuad {
 	private final float[] v;
 
 	public SimpleQuad(Vector3f v1, Vector3f v2, Vector3f v3, Vector3f v4, Vector3f normal) {
-		v = new float[]{v1.x, v1.y, v1.z, v2.x, v2.y, v2.z, v3.x, v3.y, v3.z, v4.x, v4.y, v4.z, normal.x, normal.y, normal.z};
+		v = new float[]{
+			v1.x, v1.y, v1.z,
+			v2.x, v2.y, v2.z,
+			v3.x, v3.y, v3.z,
+			v4.x, v4.y, v4.z,
+			normal.x, normal.y, normal.z
+		};
 	}
 
-	public void renderQuad(Tessellator tessellator) {
-		GL11.glNormal3f(v[NORMAL + X], v[NORMAL + Y], v[NORMAL + Z]);
-		tessellator.startDrawingQuads();
+	public void addTo(TessellatorGeneral tessellator) {
+		tessellator.setNormal(v[NORMAL + X], v[NORMAL + Y], v[NORMAL + Z]);
 		tessellator.addVertex(v[V1 + X], v[V1 + Y], v[V1 + Z]);
 		tessellator.addVertex(v[V2 + X], v[V2 + Y], v[V2 + Z]);
 		tessellator.addVertex(v[V3 + X], v[V3 + Y], v[V3 + Z]);
 		tessellator.addVertex(v[V4 + X], v[V4 + Y], v[V4 + Z]);
-		tessellator.draw();
 	}
 }

@@ -6,20 +6,24 @@ import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
-import net.minecraft.core.player.inventory.menu.MenuInventoryCreative;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import turniplabs.halplibe.HalpLibe;
+import turniplabs.halplibe.event.defs.CommonEvents;
 import turniplabs.halplibe.helper.ItemBuilder;
 import turniplabs.halplibe.helper.RecipeBuilder;
-import turniplabs.halplibe.util.GameStartEntrypoint;
-import turniplabs.halplibe.util.RecipeEntrypoint;
+import turniplabs.halplibe.helper.creativeInventory.CreativeInventoryCategory;
+import turniplabs.halplibe.helper.creativeInventory.CreativeInventoryPlacement;
+import turniplabs.halplibe.helper.creativeInventory.CreativeInventoryRegistry;
 import turniplabs.halplibe.util.TomlConfigHandler;
+import turniplabs.halplibe.util.dependency.Key;
 import turniplabs.halplibe.util.toml.Toml;
 
+import java.util.List;
 import java.util.stream.IntStream;
 
-public class ToLaserBlade implements ModInitializer, GameStartEntrypoint, RecipeEntrypoint {
-	public static final String MOD_ID = "tolaserblade";
+public class ToLaserBlade implements ModInitializer {
+	public static final String MOD_ID = HalpLibe.registerMod("tolaserblade", true);
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	// Mod Config
@@ -31,11 +35,16 @@ public class ToLaserBlade implements ModInitializer, GameStartEntrypoint, Recipe
 
 	@Override
 	public void onInitialize() {
+		// Register event listeners
+		CommonEvents.BEFORE_GAME_START.listen(Key.of(MOD_ID), this::beforeGameStart);
+		CommonEvents.AFTER_GAME_START.listen(Key.of(MOD_ID), this::afterGameStart);
+		CommonEvents.RECIPES_NAMESPACE_INIT.listen(Key.of(MOD_ID), this::initNamespaces);
+		CommonEvents.RECIPES_READY.listen(Key.of(MOD_ID), this::onRecipesReady);
+
 		LOGGER.info("ToLaserBlade initialized.");
 	}
 
-	@Override
-	public void beforeGameStart() {
+	private void beforeGameStart() {
 		// Handle config
 		TOML.addCategory("IDs")
 			.addEntry("starting_item_id", 24530);
@@ -43,40 +52,37 @@ public class ToLaserBlade implements ModInitializer, GameStartEntrypoint, Recipe
 		int startingItemId = config.getInt("IDs.starting_item_id");
 
 		// Register item
-		lbSword = new ItemBuilder(MOD_ID)
-			.build(new ItemLBSword("laser_blade", String.format("%s:item/%s", MOD_ID, "laser_blade"), startingItemId++));
+		lbSword = new ItemBuilder(MOD_ID).build(new ItemLBSword("laser_blade", startingItemId++));
 	}
 
-	@Override
-	public void afterGameStart() {
+	private void afterGameStart() {
 		addItemsToCreativeInventory();
 	}
 
 	private void addItemsToCreativeInventory() {
-		// Add items to creative inventory
-		int itemIndex = -1;
-
-		// Search for index of laser blade in creative inventory
-		for (int i = 0; i < MenuInventoryCreative.creativeItems.size(); i++) {
-			ItemStack itemStack = MenuInventoryCreative.creativeItems.get(i);
-			if (itemStack.getItem() == lbSword && itemStack.getMetadata() == 0) {
-				itemIndex = i;
-				break;
-			}
-		}
-
-		// Insert colored variants of laser blade to creative inventory
-		if (itemIndex >= 0) {
-			for (int meta = 1; meta < 16; meta++) {
-				MenuInventoryCreative.creativeItems.add(itemIndex + meta, new ItemStack(lbSword, 1, meta));
-			}
-
-			MenuInventoryCreative.creativeItemsCount += 15;
-		}
+		// Add laser blades to creative inventory
+		List<ItemStack> laserBlades = IntStream.rangeClosed(0, 15)
+			.mapToObj(i -> new ItemStack(lbSword, 1, i))
+			.toList();
+		var laserBladePlacement = new CreativeInventoryPlacement.Category(CreativeInventoryCategory.MISCELLANEOUS);
+		laserBladePlacement.setCustomSupplier(() -> laserBlades);
+		CreativeInventoryRegistry.INSTANCE.register(lbSword, laserBladePlacement);
 	}
 
-	@Override
-	public void onRecipesReady() {
+	private void initNamespaces() {
+		RecipeBuilder.initNameSpace(MOD_ID);
+		registerItemGroups();
+	}
+
+	private void registerItemGroups() {
+		// Register item group for laser blades
+		List<ItemStack> laserBlades = IntStream.rangeClosed(0, 15)
+			.mapToObj(i -> new ItemStack(lbSword, 1, i))
+			.toList();
+		Registries.ITEM_GROUPS.register(MOD_ID + ":laser_blades", laserBlades);
+	}
+
+	private void onRecipesReady() {
 		// Register recipes
 		// Colored laser blades
 		for (int i = 0; i < 16; i++) {
@@ -87,21 +93,7 @@ public class ToLaserBlade implements ModInitializer, GameStartEntrypoint, Recipe
 				.addInput('d', Items.DIAMOND)
 				.addInput('L', new ItemStack(Blocks.LAMP_IDLE, 1, i))
 				.addInput('r', Items.DUST_REDSTONE)
-				.create(String.format("laser_blade_%02d", i), new ItemStack(lbSword, 1, i));
+				.create("laser_blade_%02d".formatted(i), new ItemStack(lbSword, 1, i));
 		}
-	}
-
-	@Override
-	public void initNamespaces() {
-		RecipeBuilder.initNameSpace(MOD_ID);
-		registerItemGroups();
-	}
-
-	private void registerItemGroups() {
-		// Register item group for laser blades
-		Object[] laserBlades = IntStream.rangeClosed(0, 15)
-			.mapToObj(i -> new ItemStack(lbSword, 1, i))
-			.toArray();
-		Registries.ITEM_GROUPS.register(String.format("%s:item/%s", MOD_ID, "laser_blades"), Registries.stackListOf(laserBlades));
 	}
 }
