@@ -7,6 +7,7 @@
 ## Download
 
 - [Modrinth](https://modrinth.com/mod/tolaserblade/versions?s=true&g=b1.7.3)
+- [CurseForge](https://www.curseforge.com/minecraft/mc-mods/tolaserblade-fabric/files/all?version=Beta+1.7.3)
 
 ## Requirements
 
