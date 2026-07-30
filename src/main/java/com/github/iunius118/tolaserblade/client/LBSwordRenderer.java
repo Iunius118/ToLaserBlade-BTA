@@ -71,7 +71,7 @@ public class LBSwordRenderer {
 	private static void renderHilt(@NotNull TessellatorGeneral tessellator, byte lightIndex, @NotNull Color4F color) {
 		tessellator.startDrawingQuads();
 		tessellator.setLightmapCoord1i(lightIndex);
-		tessellator.setColor4f(color.r, color.g, color.b, color.a);
+		tessellator.setColor4f(color.r(), color.g(), color.b(), color.a());
 
 		for (SimpleQuad quad : LBSwordModel.HILT_QUADS) {
 			quad.addTo(tessellator);
@@ -84,7 +84,7 @@ public class LBSwordRenderer {
 									@NotNull Color4F color, float opacity) {
 		tessellator.startDrawingQuads();
 		tessellator.setLightmapCoord1i(FULL_BRIGHT_LIGHT_INDEX);
-		tessellator.setColor4f(color.r, color.g, color.b, color.a * opacity);
+		tessellator.setColor4f(color.r(), color.g(), color.b(), color.a() * opacity);
 
 		for (SimpleQuad quad : quads) {
 			quad.addTo(tessellator);
