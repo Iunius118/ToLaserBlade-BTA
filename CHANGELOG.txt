@@ -12,7 +12,7 @@
 - Port to BTA 8.0.1.
 - Require Better than Adventure! Fabric 8.0.1 and HalpLibe 6.1.3+8.0.
 
-### Fix
+### Fixed
 - Change item description of laser blade.
 
 ## [1.2.0]
