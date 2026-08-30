@@ -12,6 +12,9 @@ public class ToLaserBladeClient implements ClientModInitializer {
 	// Register mod shader
 	public static final Shader LASER_BLADE_SHADER = Shaders.register("tolaserblade/laser_blade", new Shader());
 
+	// Client config option
+	public static boolean use3DLaserBladeIcons = true;
+
 	@Override
 	public void onInitializeClient() {
 		// Register event listeners
@@ -19,6 +22,9 @@ public class ToLaserBladeClient implements ClientModInitializer {
 	}
 
 	private void initItemModels(ItemModelDispatcher dispatcher) {
+		// Get item model config
+		use3DLaserBladeIcons = ToLaserBlade.config.getBoolean("Client.use_3d_laser_blade_icons");
+
 		// Register item models
 		dispatcher.addDispatch(ToLaserBlade.lbSword, new ItemModelLBSword(ToLaserBlade.lbSword));
 	}

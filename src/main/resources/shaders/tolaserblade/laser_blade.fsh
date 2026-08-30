@@ -50,7 +50,6 @@ float fogFactorExp2() {
     return 1.0 - clamp(exp2(d * d * LOG2), 0.0, 1.0);
 }
 
-
 vec4 computeFog(vec4 color) {
     float f = 0;
     if (fogState.mode == 0) { // Linear
@@ -71,7 +70,7 @@ void main() {
     vec4 oColor = lightColor * Color * uColor;
     vec4 litColor = vec4(oColor.rgb * clamp(Light, 0, 1), oColor.a);
 
-    FragColor = computeFog(litColor);
+    FragColor = computeFog(litColor);   // Apply lighting to color_world.fsh
     if (FragColor.a < uAlphaTest) {
         discard;
     }
