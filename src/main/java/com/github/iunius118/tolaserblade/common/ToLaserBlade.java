@@ -14,7 +14,6 @@ import turniplabs.halplibe.helper.ItemBuilder;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.helper.creativeInventory.CreativeInventoryCategory;
 import turniplabs.halplibe.helper.creativeInventory.CreativeInventoryPlacement;
-import turniplabs.halplibe.helper.creativeInventory.CreativeInventoryRegistry;
 import turniplabs.halplibe.util.TomlConfigHandler;
 import turniplabs.halplibe.util.dependency.Key;
 import turniplabs.halplibe.util.toml.Toml;
@@ -38,6 +37,7 @@ public class ToLaserBlade implements ModInitializer {
 		// Register event listeners
 		CommonEvents.BEFORE_GAME_START.listen(Key.of(MOD_ID), this::beforeGameStart);
 		CommonEvents.AFTER_GAME_START.listen(Key.of(MOD_ID), this::afterGameStart);
+		CommonEvents.AFTER_ITEM_INIT.listen(Key.of(MOD_ID), this::registerItems);
 		CommonEvents.RECIPES_NAMESPACE_INIT.listen(Key.of(MOD_ID), this::initNamespaces);
 		CommonEvents.RECIPES_READY.listen(Key.of(MOD_ID), this::onRecipesReady);
 
@@ -49,24 +49,25 @@ public class ToLaserBlade implements ModInitializer {
 		TOML.addCategory("IDs")
 			.addEntry("starting_item_id", 24530);
 		config = new TomlConfigHandler(MOD_ID, TOML);
-		int startingItemId = config.getInt("IDs.starting_item_id");
-
-		// Register item
-		lbSword = new ItemBuilder(MOD_ID).build(new ItemLBSword("laser_blade", startingItemId++));
 	}
 
 	private void afterGameStart() {
-		addItemsToCreativeInventory();
+
 	}
 
-	private void addItemsToCreativeInventory() {
-		// Add laser blades to creative inventory
-		List<ItemStack> laserBlades = IntStream.rangeClosed(0, 15)
-			.mapToObj(i -> new ItemStack(lbSword, 1, i))
-			.toList();
-		var laserBladePlacement = new CreativeInventoryPlacement.Category(CreativeInventoryCategory.MISCELLANEOUS);
-		laserBladePlacement.setCustomSupplier(() -> laserBlades);
-		CreativeInventoryRegistry.INSTANCE.register(lbSword, laserBladePlacement);
+	private void registerItems(){
+		int startingItemId = config.getInt("IDs.starting_item_id");
+
+		// Register laser blade item and its creative inventory placement
+		var laserBladePlacement = new CreativeInventoryPlacement.Category(CreativeInventoryCategory.MISCELLANEOUS)
+			.setCustomSupplier(() ->
+				IntStream.range(0, 16)
+					.mapToObj(i -> new ItemStack(lbSword, 1, i))
+					.toList()
+			);
+		lbSword = new ItemBuilder(MOD_ID)
+			.setCreativeInventoryPlacement(laserBladePlacement)
+			.build(new ItemLBSword("laser_blade", startingItemId++));
 	}
 
 	private void initNamespaces() {
@@ -76,7 +77,7 @@ public class ToLaserBlade implements ModInitializer {
 
 	private void registerItemGroups() {
 		// Register item group for laser blades
-		List<ItemStack> laserBlades = IntStream.rangeClosed(0, 15)
+		List<ItemStack> laserBlades = IntStream.range(0, 16)
 			.mapToObj(i -> new ItemStack(lbSword, 1, i))
 			.toList();
 		Registries.ITEM_GROUPS.register(MOD_ID + ":laser_blades", laserBlades);
