@@ -4,6 +4,19 @@
 
 ## [Unreleased]
 
+## [1.4.0+8.0.1]
+### Added
+- Add `use_3d_laser_blade_icons` option to `Client` category in the config file.
+  If true, use 3D models for laser blades on the head, on the ground, and in GUIs; otherwise, use 2D textures.
+
+### Changed
+- Require HalpLibe 6.2.0+8.0.1.
+- Use 3D models for laser blades on the head, on the ground, and in GUIs.
+  The previous appearance can be restored in the config file.
+
+### Fixed
+- Fix mod initialization and various registrations.
+
 ## [1.3.0+8.0.1]
 ### Added
 - Add `tolaserblade/laser_blade` shader for laser blade.
