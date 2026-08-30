@@ -31,7 +31,7 @@ public class LBSwordRenderer {
 
 		// Transform for laser blade model
 		Matrix4f modelMat = GLRenderer.modelM4f();
-		//displayPos = new DisplayPos(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+		//displayPos = new DisplayPos(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);	// For debug
 		modelMat.translate(displayPos.tx, displayPos.ty, displayPos.tz);
 		modelMat.rotateX(Math.toRadians(displayPos.rx));
 		modelMat.rotateY(Math.toRadians(displayPos.ry));
