@@ -27,7 +27,7 @@ public class ToLaserBlade implements ModInitializer {
 
 	// Mod Config
 	public static TomlConfigHandler config;
-	private static final Toml TOML = new Toml("ToLaserBlade Config");
+	private static final Toml TOML = new Toml("ToLaserBlade configuration file.");
 
 	// Mod item
 	public static Item lbSword;
@@ -47,7 +47,12 @@ public class ToLaserBlade implements ModInitializer {
 	private void beforeGameStart() {
 		// Handle config
 		TOML.addCategory("IDs")
-			.addEntry("starting_item_id", 24530);
+			.addEntry("starting_item_id",
+				"The integer specifies the starting ID for the mod's items.", 24530);
+		TOML.addCategory("Client")
+			.addEntry("use_3d_laser_blade_icons",
+				"Use 3D models for Laser Blades on the head, on the ground, and in GUIs if true, " +
+					"or 2D textures if false.", true);
 		config = new TomlConfigHandler(MOD_ID, TOML);
 	}
 
