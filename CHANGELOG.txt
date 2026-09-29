@@ -3,6 +3,8 @@
 [Source](https://github.com/Iunius118/ToLaserBlade-BTA).
 
 ## [Unreleased]
+### Changed
+- Use JSON file instead of RecipeBuilder to register recipes.
 
 ## [1.4.0+8.0.1]
 ### Added

@@ -2,6 +2,7 @@ package com.github.iunius118.tolaserblade.common;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.core.block.Blocks;
+import net.minecraft.core.data.DataLoader;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
@@ -89,7 +90,13 @@ public class ToLaserBlade implements ModInitializer {
 	}
 
 	private void onRecipesReady() {
-		// Register recipes
+		// Register recipes from JSON files instead of using the recipe builder
+		//registerLaserBladeRecipes();
+		DataLoader.loadRecipesFromFile("/assets/" + MOD_ID + "/recipes/workbench.json");
+	}
+
+	private void registerLaserBladeRecipes() {
+		// Register recipes directly with the recipe builder
 		// Colored laser blades
 		for (int i = 0; i < 16; i++) {
 			RecipeBuilder.Shaped(MOD_ID)
