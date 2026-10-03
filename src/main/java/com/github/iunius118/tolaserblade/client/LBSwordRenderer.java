@@ -9,10 +9,7 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.LightIndexHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.joml.Math;
-import org.joml.Matrix4f;
 import org.lwjgl.opengl.GL14;
-import org.useless.dragonfly.DisplayPos;
 
 import java.util.List;
 
@@ -20,23 +17,13 @@ public class LBSwordRenderer {
 	private static final byte FULL_BRIGHT_LIGHT_INDEX = LightIndexHelper.lightIndex2i(15, 15);
 
 	public static void doRender(@NotNull TessellatorGeneral tessellator, @Nullable Entity holder,
-								@NotNull ItemStack itemStack, @NotNull DisplayPos displayPos, byte lightIndex) {
-		GLRenderer.pushFrame();
-
+								@NotNull ItemStack itemStack, @NotNull String displayPosId, byte lightIndex,
+								float partialTick) {
 		// Change render settings
 		GLRenderer.setShader(ToLaserBladeClient.LASER_BLADE_SHADER);
 		GLRenderer.enableState(State.BLEND);
 		GLRenderer.enableState(State.CULL_FACE);
 		GLRenderer.globalSetLightEnabled(true);
-
-		// Transform for laser blade model
-		Matrix4f modelMat = GLRenderer.modelM4f();
-		//displayPos = new DisplayPos(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);	// For debug
-		modelMat.translate(displayPos.tx, displayPos.ty, displayPos.tz);
-		modelMat.rotateX(Math.toRadians(displayPos.rx));
-		modelMat.rotateY(Math.toRadians(displayPos.ry));
-		modelMat.rotateZ(Math.toRadians(displayPos.rz));
-		modelMat.scale(displayPos.sx, displayPos.sy, displayPos.sz);
 
 		// Get laser blade color
 		boolean isSubMode = false;
@@ -64,8 +51,6 @@ public class LBSwordRenderer {
 		GLRenderer.disableState(State.CULL_FACE);
 		GLRenderer.setBlendFunc(BlendFactor.SRC_ALPHA, BlendFactor.ONE_MINUS_SRC_ALPHA);
 		GLRenderer.disableState(State.BLEND);
-
-		GLRenderer.popFrame();
 	}
 
 	private static void renderHilt(@NotNull TessellatorGeneral tessellator, byte lightIndex, @NotNull Color4F color) {

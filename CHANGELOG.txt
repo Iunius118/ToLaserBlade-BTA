@@ -3,6 +3,11 @@
 [Source](https://github.com/Iunius118/ToLaserBlade-BTA).
 
 ## [Unreleased]
+### Added
+- Add a trail effect to the laser blade held by the local player when swinging.
+- Add `enable_laser_blade_trail` option to `Client` category in the config file.
+  If true, display a trail effect when the local player swings a laser blade.
+
 ### Changed
 - Use JSON file instead of RecipeBuilder to register recipes.
 
