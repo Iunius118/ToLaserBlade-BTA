@@ -2,6 +2,7 @@ package com.github.iunius118.tolaserblade.common;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.core.block.Blocks;
+import net.minecraft.core.data.DataLoader;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
@@ -27,7 +28,6 @@ public class ToLaserBlade implements ModInitializer {
 
 	// Mod Config
 	public static TomlConfigHandler config;
-	private static final Toml TOML = new Toml("ToLaserBlade configuration file.");
 
 	// Mod item
 	public static Item lbSword;
@@ -46,14 +46,17 @@ public class ToLaserBlade implements ModInitializer {
 
 	private void beforeGameStart() {
 		// Handle config
-		TOML.addCategory("IDs")
+		var toml = new Toml("ToLaserBlade configuration file.");
+		toml.addCategory("IDs")
 			.addEntry("starting_item_id",
 				"The integer specifies the starting ID for the mod's items.", 24530);
-		TOML.addCategory("Client")
+		toml.addCategory("Client")
 			.addEntry("use_3d_laser_blade_icons",
 				"Use 3D models for Laser Blades on the head, on the ground, and in GUIs if true, " +
-					"or 2D textures if false.", true);
-		config = new TomlConfigHandler(MOD_ID, TOML);
+					"or 2D textures if false.", true)
+			.addEntry("enable_laser_blade_trail",
+				"Display a trail effect when the local player swings a laser blade.", true);
+		config = new TomlConfigHandler(MOD_ID, toml);
 	}
 
 	private void afterGameStart() {
@@ -89,7 +92,13 @@ public class ToLaserBlade implements ModInitializer {
 	}
 
 	private void onRecipesReady() {
-		// Register recipes
+		// Register recipes from JSON files instead of using the recipe builder
+		//registerLaserBladeRecipes();
+		DataLoader.loadRecipesFromFile("/assets/" + MOD_ID + "/recipes/workbench.json");
+	}
+
+	private void registerLaserBladeRecipes() {
+		// Register recipes directly with the recipe builder
 		// Colored laser blades
 		for (int i = 0; i < 16; i++) {
 			RecipeBuilder.Shaped(MOD_ID)

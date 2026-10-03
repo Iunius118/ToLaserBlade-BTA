@@ -1,0 +1,736 @@
+[
+  {
+    "name": "tolaserblade:workbench/laser_blade_00",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle"
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade"
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_01",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 1
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 1
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_02",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 2
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 2
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_03",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 3
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 3
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_04",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 4
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 4
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_05",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 5
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 5
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_06",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 6
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 6
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_07",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 7
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 7
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_08",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 8
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 8
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_09",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 9
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 9
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_10",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 10
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 10
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_11",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 11
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 11
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_12",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 12
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 12
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_13",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 13
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 13
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_14",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 14
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 14
+    }
+  },
+  {
+    "name": "tolaserblade:workbench/laser_blade_15",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "gsd",
+      "sLs",
+      "rsg"
+    ],
+    "symbols": [
+      {
+        "symbol": "g",
+        "stack": {
+          "id": "minecraft:item/dust_glowstone"
+        }
+      },
+      {
+        "symbol": "s",
+        "stack": {
+          "id": "minecraft:item/ingot_steel"
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "id": "minecraft:item/diamond"
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "id": "minecraft:block/lamp_idle",
+          "meta": 15
+        }
+      },
+      {
+        "symbol": "r",
+        "stack": {
+          "id": "minecraft:item/dust_redstone"
+        }
+      }
+    ],
+    "result": {
+      "id": "tolaserblade:item/laser_blade",
+      "meta": 15
+    }
+  }
+]

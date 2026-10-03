@@ -14,6 +14,10 @@ public class ToLaserBladeClient implements ClientModInitializer {
 
 	// Client config option
 	public static boolean use3DLaserBladeIcons = true;
+	public static boolean enableLaserBladeTrail = true;
+
+	// Laser blade trails
+	public static final LaserBladeTrailGroup thePlayerTrails = new LaserBladeTrailGroup(200_000_000L, 100_000_000L);
 
 	@Override
 	public void onInitializeClient() {
@@ -24,6 +28,7 @@ public class ToLaserBladeClient implements ClientModInitializer {
 	private void initItemModels(ItemModelDispatcher dispatcher) {
 		// Get item model config
 		use3DLaserBladeIcons = ToLaserBlade.config.getBoolean("Client.use_3d_laser_blade_icons");
+		enableLaserBladeTrail = ToLaserBlade.config.getBoolean("Client.enable_laser_blade_trail");
 
 		// Register item models
 		dispatcher.addDispatch(ToLaserBlade.lbSword, new ItemModelLBSword(ToLaserBlade.lbSword));
