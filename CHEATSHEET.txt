@@ -1,7 +1,7 @@
 # Cheatsheet
 
 [ToLaserBlade-BTA](https://github.com/Iunius118/ToLaserBlade-BTA)
-v1.4.0+8.0.1.
+v1.5.0+8.0.1.
 
 ToLaserBlade for Better than Adventure!
 
@@ -42,4 +42,6 @@ The mod configuration file is saved to `config/tolaserblade.cfg`.
 [Client]
 	# Use 3D models for Laser Blades on the head, on the ground, and in GUIs if true, or 2D textures if false.
 	use_3d_laser_blade_icons = true
+	# Display a trail effect when the local player swings a laser blade.
+	enable_laser_blade_trail = true
 ```

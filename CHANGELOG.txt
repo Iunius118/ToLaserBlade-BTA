@@ -3,6 +3,8 @@
 [Source](https://github.com/Iunius118/ToLaserBlade-BTA).
 
 ## [Unreleased]
+
+## [1.5.0+8.0.1]
 ### Added
 - Add a trail effect to the laser blade held by the local player when swinging.
 - Add `enable_laser_blade_trail` option to `Client` category in the config file.
